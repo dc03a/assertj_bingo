@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class bingoTest {
     @Test
     void testRellenarNumerosCarton() {
-        int[][] carton = new int[8][3];
+        int[][] carton = new int[9][3];
         Bingo.rellenarNumerosCarton(carton);
 
         for (int i = 0; i < carton.length; i++) {
@@ -16,7 +16,7 @@ public class bingoTest {
 
     @Test
     void testPonerBlancos() {
-        int[][] carton = new int[8][3];
+        int[][] carton = new int[9][3];
         Bingo.rellenarNumerosCarton(carton);
         Bingo.ponerBlancos(carton);
 
@@ -39,14 +39,14 @@ public class bingoTest {
 
     @Test
     void testBuscarFila() {
-        int[][] carton = {{1, 2, 3}, {-1, 5, 6}, {7, -1, 9}, {10, 11, 12}, {13, 14, 15}, {16, 17, 18}, {19, 20, 21}, {22, 23, 24}};
+        int[][] carton = {{1, 2, 3}, {-1, 5, 6}, {7, -1, 9}, {10, 11, 12}, {13, 14, 15}, {16, 17, 18}, {19, 20, 21}, {22, 23, 24}, {25, 26, 27}};
         assertTrue(Bingo.buscarFila(carton, 1, 0));
         assertFalse(Bingo.buscarFila(carton, 2, 1));
     }
 
     @Test
     void testBuscarColumna() {
-        int[][] carton = {{1, 2, -1}, {4, -1, 6}, {7, 8, 9}, {-1, 11, -1}, {13, 14, 15}, {16, -1, 18}, {19, 20, 21}, {22, 23, 24}};
+        int[][] carton = {{1, 2, -1}, {4, -1, 6}, {7, 8, 9}, {-1, 11, -1}, {13, 14, 15}, {16, -1, 18}, {19, 20, 21}, {22, 23, 24}, {25, 26, 27}};
         assertTrue(Bingo.buscarColumna(carton, 0));
         assertFalse(Bingo.buscarColumna(carton, 1));
     }
@@ -60,7 +60,7 @@ public class bingoTest {
 
     @Test
     void testPintarCarton() {
-        int[][] carton = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}, {13, 14, 15}, {16, 17, 18}, {19, 20, 21}, {22, 23, 24}};
+        int[][] carton = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}, {13, 14, 15}, {16, 17, 18}, {19, 20, 21}, {22, 23, 24},  {25, 26, 27}};
         int[] bolas = {1, 3, 5, 7, 9};
         int aciertos = Bingo.pintarCarton(carton, bolas);
         assertEquals(5, aciertos);
